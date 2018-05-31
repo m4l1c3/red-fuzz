@@ -1,13 +1,11 @@
 Red [
-	Title:  "Test for JSON parser"
+	Title:  "Red Fuzzer"
   	Author: "..."
   	File:   %fuzz.red
   	Tabs:   4
-  	Rights:  "Copyright (C) 2018 Red Foundation. All rights reserved."
+  	Rights:  "????????"
   	License: {
-  		Distributed under the Boost Software License, Version 1.0.
-		See https://github.com/red/red/blob/master/
-    	BSL-License.txt
+        MIT
 	}
 ]
 
@@ -16,7 +14,6 @@ fuzzer: context [
         try [
             #include fileToImport 
             payloads: read/lines payload_list
-            ;--print do json/load-str "loop 5 [print 2]"
             foreach [line] payloads [
                 print json/load-str line
                 do print :funcToRun [line]
