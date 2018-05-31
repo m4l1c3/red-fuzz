@@ -15,8 +15,9 @@ fuzzer: context [
             #include fileToImport 
             payloads: read/lines payload_list
             foreach [line] payloads [
-                print json/load-str line
-                do print :funcToRun [line]
+                print line
+                ;todo call function with line output as argument
+                ;print funcToRun [line]
             ]
         ] [
             print "error"
